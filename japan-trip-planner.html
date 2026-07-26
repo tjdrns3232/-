@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본 여행 준비</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3B82F6;
+            --primary-dark: #2563EB;
+            --primary-light: #EBF8FF;
+            --secondary: #F59E0B;
+            --accent: #FBBF24;
+            --success: #10B981;
+            --danger: #EF4444;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --bg: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==================== Header ==================== */
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            color: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* ==================== Navigation Tabs ==================== */
+        .tab-navigation {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 40px;
+            overflow-x: auto;
+            padding: 0 0 8px 0;
+            scroll-behavior: smooth;
+        }
+
+        .tab-navigation::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .tab-navigation::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .tab-navigation::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .tab-navigation::-webkit-scrollbar-thumb:hover {
+            background: var(--text-light);
+        }
+
+        .tab-btn {
+            padding: 12px 20px;
+            border: none;
+            background: var(--bg);
+            cursor: pointer;
+            font-size: 0.95em;
+            color: var(--text-light);
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .tab-btn.active {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        .tab-btn:hover {
+            background: var(--primary-light);
+            color: var(--text);
+        }
+
+        /* ==================== Tab Content ==================== */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ==================== User Selector ==================== */
+        .user-selector {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .user-selector-label {
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: block;
+            color: var(--text);
+            font-size: 1.1em;
+        }
+
+        .user-pills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .user-pill {
+            padding: 10px 18px;
+            border-radius: 24px;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .user-pill.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .user-pill:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .add-user-btn {
+            padding: 10px 18px;
+            border-radius: 24px;
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .add-user-btn:hover {
+            background: #3ab5b0;
+        }
+
+        /* ==================== Cards & Grid ==================== */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* ==================== Buttons ==================== */
+        .btn {
+            padding: 11px 18px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #D97706;
+        }
+
+        .btn-small {
+            padding: 8px 14px;
+            font-size: 0.9em;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .btn-danger:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ==================== Forms ==================== */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-size: 0.95em;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-family: 'Inter', inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* ==================== Lists ==================== */
+        .list-item {
+            background: var(--bg);
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .list-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .list-item.completed {
+            opacity: 0.6;
+            background: #F5F5F5;
+        }
+
+        .list-item.completed .list-content {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .list-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .list-content {
+            flex: 1;
+        }
+
+        .list-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .list-desc {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .list-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        /* ==================== Info Grid ==================== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #EFF6FF 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-label {
+            font-size: 0.85em;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .info-value {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-top: 8px;
+        }
+
+        /* ==================== Timeline ==================== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: var(--border);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-time {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .timeline-content {
+            margin-top: 5px;
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 6px;
+        }
+
+        /* ==================== Badge ==================== */
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+
+        .badge-success {
+            background: #E8F9F0;
+            color: var(--success);
+        }
+
+        .badge-warning {
+            background: #FFF9E6;
+            color: var(--accent);
+        }
+
+        .badge-danger {
+            background: #FFE5E5;
+            color: var(--danger);
+        }
+
+        .badge-info {
+            background: #E8F5F9;
+            color: var(--secondary);
+        }
+
+        /* ==================== Modal ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: 14px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .modal-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: var(--text-light);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: var(--text);
+            background: var(--bg);
+            border-radius: 8px;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+        }
+
+        /* ==================== Status Indicator ==================== */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-indicator::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-done .status-indicator::before {
+            background: var(--success);
+        }
+
+        .status-pending .status-indicator::before {
+            background: var(--accent);
+        }
+
+        .status-not-started .status-indicator::before {
+            background: var(--text-light);
+        }
+
+        /* ==================== Responsive ==================== */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-navigation {
+                padding-bottom: 0;
+            }
+
+            .user-pills {
+                gap: 8px;
+            }
+
+            .btn-group {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ==================== Empty State ==================== */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-light);
+        }
+
+        .empty-state-icon {
+            font-size: 3.5em;
+            margin-bottom: 16px;
+        }
+
+        .empty-state-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        /* ==================== Utility ==================== */
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: var(--text-light);
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .gap-10 {
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ==================== Header ==================== -->
+        <div class="header">
+            <div class="header-content">
+                <h1>🗾 일본 여행 준비</h1>
+                <p>여행을 계획하고, 준비하고, 함께 나누세요</p>
+            </div>
+        </div>
+
+        <!-- ==================== User Selector ==================== -->
+        <div class="user-selector">
+            <label class="user-selector-label">👥 사용자 선택</label>
+            <div class="user-pills" id="userPills">
+                <button class="user-pill active" data-user="all">전체</button>
+            </div>
+            <button class="add-user-btn mt-20" onclick="openAddUserModal()">+ 사용자 추가</button>
+        </div>
+
+        <!-- ==================== Tab Navigation ==================== -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" onclick="switchTab('trip-info')">여행 정보</button>
+            <button class="tab-btn" onclick="switchTab('bookings')">예약 관리</button>
+            <button class="tab-btn" onclick="switchTab('packing')">준비물</button>
+            <button class="tab-btn" onclick="switchTab('itinerary')">여정</button>
+            <button class="tab-btn" onclick="switchTab('sim')">유심</button>
+            <button class="tab-btn" onclick="switchTab('notes')">메모</button>
+        </div>
+
+        <!-- ==================== TAB 1: 여행 정보 ==================== -->
+        <div id="trip-info" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">기본 정보</div>
+                        <div class="card-subtitle">여행의 기본 정보를 입력하세요</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openTripModal()">수정</button>
+                </div>
+                <div class="info-grid" id="tripInfoDisplay">
+                    <div class="info-box">
+                        <div class="info-label">여행지</div>
+                        <div class="info-value" id="tripDestination">-</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">시작 날짜</div>
+                        <div class="info-value" id="tripStartDate">-</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">종료 날짜</div>
+                        <div class="info-value" id="tripEndDate">-</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">예상 비용</div>
+                        <div class="info-value" id="tripBudget">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">여행자</div>
+                        <div class="card-subtitle">함께 가는 사람들</div>
+                    </div>
+                </div>
+                <div id="travelersDisplay"></div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 2: 예약 관리 ==================== -->
+        <div id="bookings" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">항공권</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-small" onclick="addFlightClick()">+ 추가</button>
+                        <button class="btn btn-secondary btn-small" onclick="toggleFlights()"><span id="flightToggleBtn">−</span></button>
+                    </div>
+                </div>
+                <div id="flightsDisplay" class="flightSection"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">숙박</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openHotelModal()">+ 추가</button>
+                </div>
+                <div id="hotelsDisplay"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">교통</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openTransportModal()">+ 추가</button>
+                </div>
+                <div id="transportsDisplay"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">입장권 / 투어</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openTicketModal()">+ 추가</button>
+                </div>
+                <div id="ticketsDisplay"></div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 3: 준비물 ==================== -->
+        <div id="packing" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">준비물 목록</div>
+                        <div class="card-subtitle" id="packingProgress"></div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openPackingModal()">+ 추가</button>
+                </div>
+                <div id="packingDisplay"></div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 4: 여정 ==================== -->
+        <div id="itinerary" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">일일 여정</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openDayModal()">+ 날짜 추가</button>
+                </div>
+                <div id="itineraryDisplay"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">여정 로드맵</div>
+                        <div class="card-subtitle">일일 여정을 한눈에 보세요</div>
+                    </div>
+                </div>
+                <div id="roadmapDisplay" style="margin-bottom: 30px;"></div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 5: 유심 ==================== -->
+        <div id="sim" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">유심 정보</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openSimModal()">수정</button>
+                </div>
+                <div id="simDisplay"></div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 6: 메모 ==================== -->
+        <div id="notes" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">여행 메모</div>
+                        <div class="card-subtitle">개인 메모를 남겨보세요</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="openPersonalNoteModal()">+ 메모 추가</button>
+                </div>
+                <div id="personalNotesDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">사용자 추가</div>
+                <button class="close-btn" onclick="closeModal('addUserModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">이름</label>
+                <input type="text" class="form-input" id="newUserName" placeholder="사용자 이름 입력">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addUserModal')">취소</button>
+                <button class="btn btn-primary" onclick="addUser()">추가</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trip Info Modal -->
+    <div id="tripModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">여행 정보 수정</div>
+                <button class="close-btn" onclick="closeModal('tripModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">여행지</label>
+                <input type="text" class="form-input" id="tripDestinationInput" placeholder="도쿄, 오사카 등">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">시작 날짜</label>
+                    <input type="date" class="form-input" id="tripStartDateInput">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">종료 날짜</label>
+                    <input type="date" class="form-input" id="tripEndDateInput">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">예상 비용 (원)</label>
+                <input type="number" class="form-input" id="tripBudgetInput" placeholder="500000">
+            </div>
+            <div class="form-group">
+                <label class="form-label">여행자 (쉼표로 구분)</label>
+                <input type="text" class="form-input" id="travelersInput" placeholder="김철수, 이영희, 박민수">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('tripModal')">취소</button>
+                <button class="btn btn-primary" onclick="saveTripInfo()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flight Modal -->
+    <div id="flightModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">항공권 추가</div>
+                <button class="close-btn" onclick="closeModal('flightModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">항공사</label>
+                <input type="text" class="form-input" id="flightAirline" placeholder="예: JAL, ANA">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">편명</label>
+                    <input type="text" class="form-input" id="flightNumber" placeholder="JL001">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">출발 시간</label>
+                    <input type="datetime-local" class="form-input" id="flightDeparture">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">도착 시간</label>
+                    <input type="datetime-local" class="form-input" id="flightArrival">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">상태</label>
+                    <select class="form-select" id="flightStatus">
+                        <option>예약 완료</option>
+                        <option>확인 필요</option>
+                        <option>취소됨</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('flightModal')">취소</button>
+                <button class="btn btn-primary" onclick="addFlight()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Modal -->
+    <div id="hotelModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">숙박 예약 추가</div>
+                <button class="close-btn" onclick="closeModal('hotelModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">호텔명</label>
+                <input type="text" class="form-input" id="hotelName" placeholder="호텔 이름">
+            </div>
+            <div class="form-group">
+                <label class="form-label">주소</label>
+                <input type="text" class="form-input" id="hotelAddress" placeholder="주소">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">체크인</label>
+                    <input type="date" class="form-input" id="hotelCheckIn">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">체크아웃</label>
+                    <input type="date" class="form-input" id="hotelCheckOut">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">가격 (원)</label>
+                    <input type="number" class="form-input" id="hotelPrice" placeholder="100000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">상태</label>
+                    <select class="form-select" id="hotelStatus">
+                        <option>예약 완료</option>
+                        <option>확인 필요</option>
+                        <option>취소됨</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('hotelModal')">취소</button>
+                <button class="btn btn-primary" onclick="addHotel()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transport Modal -->
+    <div id="transportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">교통 예약 추가</div>
+                <button class="close-btn" onclick="closeModal('transportModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">교통 수단</label>
+                <select class="form-select" id="transportType">
+                    <option>✈️ 비행기</option>
+                    <option>🚄 신칸센</option>
+                    <option>🚆 기차 (JR)</option>
+                    <option>🚂 일반 기차</option>
+                    <option>🚢 배 / 페리</option>
+                    <option>🚗 렌트카</option>
+                    <option>🚌 버스</option>
+                    <option>🚕 택시</option>
+                    <option>📍 기타</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">노선 / 설명</label>
+                <input type="text" class="form-input" id="transportRoute" placeholder="도쿄 → 오사카">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">출발 시간</label>
+                    <input type="datetime-local" class="form-input" id="transportDeparture">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">도착 시간</label>
+                    <input type="datetime-local" class="form-input" id="transportArrival">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">비용 (원)</label>
+                <input type="number" class="form-input" id="transportPrice" placeholder="50000">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('transportModal')">취소</button>
+                <button class="btn btn-primary" onclick="addTransport()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticket Modal -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">입장권 / 투어 추가</div>
+                <button class="close-btn" onclick="closeModal('ticketModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">시설명 / 투어명</label>
+                <input type="text" class="form-input" id="ticketName" placeholder="도쿄 디즈니랜드">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">방문 날짜</label>
+                    <input type="date" class="form-input" id="ticketDate">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">시간</label>
+                    <input type="time" class="form-input" id="ticketTime">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">가격 (원)</label>
+                    <input type="number" class="form-input" id="ticketPrice" placeholder="100000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">상태</label>
+                    <select class="form-select" id="ticketStatus">
+                        <option>예약 완료</option>
+                        <option>확인 필요</option>
+                        <option>취소됨</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('ticketModal')">취소</button>
+                <button class="btn btn-primary" onclick="addTicket()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packing Modal -->
+    <div id="packingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">준비물 추가</div>
+                <button class="close-btn" onclick="closeModal('packingModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">카테고리</label>
+                <select class="form-select" id="packingCategory">
+                    <option>필수 문서</option>
+                    <option>의류</option>
+                    <option>세면도구</option>
+                    <option>전자기기</option>
+                    <option>의약품</option>
+                    <option>기타</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">항목</label>
+                <input type="text" class="form-input" id="packingItem" placeholder="예: 여권">
+            </div>
+            <div class="form-group">
+                <label class="form-label">담당자 (선택)</label>
+                <input type="text" class="form-input" id="packingUser" placeholder="이름 입력">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('packingModal')">취소</button>
+                <button class="btn btn-primary" onclick="addPacking()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day Modal -->
+    <div id="dayModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">여정 추가</div>
+                <button class="close-btn" onclick="closeModal('dayModal')">&times;</button>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">여행 Day (1~N)</label>
+                    <input type="number" class="form-input" id="dayNumber" placeholder="1" min="1">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">날짜</label>
+                    <input type="date" class="form-input" id="dayDate">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">시간</label>
+                <input type="time" class="form-input" id="dayTime">
+            </div>
+            <div class="form-group">
+                <label class="form-label">활동 / 장소</label>
+                <input type="text" class="form-input" id="dayLocation" placeholder="센소지 사찰 방문">
+            </div>
+            <div class="form-group">
+                <label class="form-label">설명</label>
+                <textarea class="form-textarea" id="dayDescription" placeholder="상세 설명"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('dayModal')">취소</button>
+                <button class="btn btn-primary" onclick="addDay()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIM Modal -->
+    <div id="simModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">유심 정보 입력</div>
+                <button class="close-btn" onclick="closeModal('simModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">유심 타입</label>
+                <select class="form-select" id="simType">
+                    <option>유심 교체</option>
+                    <option>eSIM</option>
+                    <option>주머니 와이파이</option>
+                    <option>레로라마</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">업체명</label>
+                <input type="text" class="form-input" id="simProvider" placeholder="KDDI, SoftBank 등">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">구매 가격 (원)</label>
+                    <input type="number" class="form-input" id="simPrice" placeholder="20000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">데이터</label>
+                    <input type="text" class="form-input" id="simData" placeholder="5GB">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">구입 장소</label>
+                <input type="text" class="form-input" id="simLocation" placeholder="성인천공항, 온라인 등">
+            </div>
+            <div class="form-group">
+                <label class="form-label">참고사항</label>
+                <textarea class="form-textarea" id="simNotes" placeholder="번호, APN 설정 등"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('simModal')">취소</button>
+                <button class="btn btn-primary" onclick="saveSim()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Modal -->
+    <div id="notesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">메모 추가</div>
+                <button class="close-btn" onclick="closeModal('notesModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">제목</label>
+                <input type="text" class="form-input" id="noteTitle" placeholder="제목 입력">
+            </div>
+            <div class="form-group">
+                <label class="form-label">내용</label>
+                <textarea class="form-textarea" id="noteContent" placeholder="메모 작성"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('notesModal')">취소</button>
+                <button class="btn btn-primary" onclick="addNote()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Note Modal -->
+    <div id="personalNoteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">개인 메모 추가</div>
+                <button class="close-btn" onclick="closeModal('personalNoteModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">제목</label>
+                <input type="text" class="form-input" id="personalNoteTitle" placeholder="제목">
+            </div>
+            <div class="form-group">
+                <label class="form-label">내용</label>
+                <textarea class="form-textarea" id="personalNoteContent" placeholder="메모 작성"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('personalNoteModal')">취소</button>
+                <button class="btn btn-primary" onclick="addPersonalNote()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checklist Modal -->
+    <div id="checklistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">체크리스트 항목 추가</div>
+                <button class="close-btn" onclick="closeModal('checklistModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">할 일</label>
+                <input type="text" class="form-input" id="checklistTask" placeholder="예: 항공권 예약">
+            </div>
+            <div class="form-group">
+                <label class="form-label">예정 시간</label>
+                <input type="text" class="form-input" id="checklistDays" placeholder="예: 2개월 전, 1주 전">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('checklistModal')">취소</button>
+                <button class="btn btn-primary" onclick="addChecklist()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== Data Structure ====================
+        const data = {
+            users: ['사용자1'],
+            currentUser: 'all',
+            tripInfo: {
+                destination: '',
+                startDate: '',
+                endDate: '',
+                budget: '',
+                travelers: []
+            },
+            checklist: [],
+            bookings: {
+                flights: [],
+                hotels: [],
+                transports: [],
+                tickets: []
+            },
+            packing: [],
+            itinerary: [],
+            sim: {
+                type: '',
+                provider: '',
+                price: '',
+                data: '',
+                location: '',
+                notes: ''
+            },
+            personalNotes: {}
+        };
+
+        // ==================== Tab Switching ====================
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // ==================== User Management ====================
+        function openAddUserModal() {
+            document.getElementById('addUserModal').classList.add('show');
+        }
+
+        function addUser() {
+            const name = document.getElementById('newUserName').value.trim();
+            if (name) {
+                if (!data.users.includes(name)) {
+                    data.users.push(name);
+                    data.personalNotes[name] = [];
+                    renderUserPills();
+                    document.getElementById('newUserName').value = '';
+                    closeModal('addUserModal');
+                }
+            }
+        }
+
+        function renderUserPills() {
+            const userPills = document.getElementById('userPills');
+            userPills.innerHTML = '<button class="user-pill active" data-user="all" onclick="selectUser(\'all\')">전체</button>';
+            
+            data.users.forEach(user => {
+                const pillContainer = document.createElement('div');
+                pillContainer.style.position = 'relative';
+                pillContainer.style.display = 'inline-block';
+                
+                const pill = document.createElement('button');
+                pill.className = 'user-pill';
+                pill.textContent = user;
+                pill.style.paddingRight = '32px';
+                pill.onclick = () => selectUser(user);
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'btn btn-danger btn-small';
+                deleteBtn.textContent = '×';
+                deleteBtn.style.position = 'absolute';
+                deleteBtn.style.top = '50%';
+                deleteBtn.style.right = '4px';
+                deleteBtn.style.transform = 'translateY(-50%)';
+                deleteBtn.style.width = '24px';
+                deleteBtn.style.height = '24px';
+                deleteBtn.style.padding = '0';
+                deleteBtn.style.fontSize = '18px';
+                deleteBtn.style.borderRadius = '50%';
+                deleteBtn.style.lineHeight = '1';
+                deleteBtn.style.pointerEvents = 'auto';
+                deleteBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    deleteUser(user);
+                };
+                
+                pillContainer.appendChild(pill);
+                pillContainer.appendChild(deleteBtn);
+                userPills.appendChild(pillContainer);
+            });
+        }
+
+        function selectUser(user) {
+            data.currentUser = user;
+            document.querySelectorAll('.user-pill').forEach(pill => pill.classList.remove('active'));
+            event.target.classList.add('active');
+            renderAllContent();
+        }
+
+        function deleteUser(user) {
+            data.users = data.users.filter(u => u !== user);
+            if (data.personalNotes[user]) {
+                delete data.personalNotes[user];
+            }
+            if (data.currentUser === user) {
+                data.currentUser = 'all';
+            }
+            renderUserPills();
+            renderAllContent();
+        }
+
+        // ==================== Modal Functions ====================
+        function openTripModal() {
+            document.getElementById('tripDestinationInput').value = data.tripInfo.destination;
+            document.getElementById('tripStartDateInput').value = data.tripInfo.startDate;
+            document.getElementById('tripEndDateInput').value = data.tripInfo.endDate;
+            document.getElementById('tripBudgetInput').value = data.tripInfo.budget;
+            document.getElementById('travelersInput').value = data.tripInfo.travelers.join(', ');
+            document.getElementById('tripModal').classList.add('show');
+        }
+
+        function saveTripInfo() {
+            data.tripInfo = {
+                destination: document.getElementById('tripDestinationInput').value,
+                startDate: document.getElementById('tripStartDateInput').value,
+                endDate: document.getElementById('tripEndDateInput').value,
+                budget: document.getElementById('tripBudgetInput').value,
+                travelers: document.getElementById('travelersInput').value.split(',').map(t => t.trim()).filter(t => t)
+            };
+            closeModal('tripModal');
+            renderTripInfo();
+        }
+
+        function openFlightModal() {
+            document.getElementById('flightModal').classList.add('show');
+        }
+
+        function addFlightClick() {
+            openFlightModal();
+        }
+
+        function toggleFlights() {
+            const flightSection = document.querySelector('.flightSection');
+            const toggleBtn = document.getElementById('flightToggleBtn');
+            
+            if (flightSection.style.display === 'none') {
+                flightSection.style.display = 'block';
+                toggleBtn.textContent = '−';
+            } else {
+                flightSection.style.display = 'none';
+                toggleBtn.textContent = '+';
+            }
+        }
+
+        function addFlight() {
+            const flight = {
+                id: Date.now(),
+                airline: document.getElementById('flightAirline').value,
+                number: document.getElementById('flightNumber').value,
+                departure: document.getElementById('flightDeparture').value,
+                arrival: document.getElementById('flightArrival').value,
+                status: document.getElementById('flightStatus').value
+            };
+            data.bookings.flights.push(flight);
+            closeModal('flightModal');
+            clearFlightForm();
+            renderFlights();
+        }
+
+        function openHotelModal() {
+            document.getElementById('hotelModal').classList.add('show');
+        }
+
+        function addHotel() {
+            const hotel = {
+                id: Date.now(),
+                name: document.getElementById('hotelName').value,
+                address: document.getElementById('hotelAddress').value,
+                checkIn: document.getElementById('hotelCheckIn').value,
+                checkOut: document.getElementById('hotelCheckOut').value,
+                price: document.getElementById('hotelPrice').value,
+                status: document.getElementById('hotelStatus').value
+            };
+            data.bookings.hotels.push(hotel);
+            closeModal('hotelModal');
+            clearHotelForm();
+            renderHotels();
+        }
+
+        function openTransportModal() {
+            document.getElementById('transportModal').classList.add('show');
+        }
+
+        function addTransport() {
+            const transport = {
+                id: Date.now(),
+                type: document.getElementById('transportType').value,
+                route: document.getElementById('transportRoute').value,
+                departure: document.getElementById('transportDeparture').value,
+                arrival: document.getElementById('transportArrival').value,
+                price: document.getElementById('transportPrice').value
+            };
+            data.bookings.transports.push(transport);
+            closeModal('transportModal');
+            clearTransportForm();
+            renderTransports();
+        }
+
+        function openTicketModal() {
+            document.getElementById('ticketModal').classList.add('show');
+        }
+
+        function addTicket() {
+            const ticket = {
+                id: Date.now(),
+                name: document.getElementById('ticketName').value,
+                date: document.getElementById('ticketDate').value,
+                time: document.getElementById('ticketTime').value,
+                price: document.getElementById('ticketPrice').value,
+                status: document.getElementById('ticketStatus').value
+            };
+            data.bookings.tickets.push(ticket);
+            closeModal('ticketModal');
+            clearTicketForm();
+            renderTickets();
+        }
+
+        function openPackingModal() {
+            document.getElementById('packingModal').classList.add('show');
+        }
+
+        function addPacking() {
+            const packing = {
+                id: Date.now(),
+                category: document.getElementById('packingCategory').value,
+                item: document.getElementById('packingItem').value,
+                user: document.getElementById('packingUser').value || '공용',
+                completed: false,
+                createdBy: data.currentUser,
+                createdAt: new Date().toLocaleString('ko-KR')
+            };
+            data.packing.push(packing);
+            closeModal('packingModal');
+            clearPackingForm();
+            renderPacking();
+        }
+
+        function openDayModal() {
+            document.getElementById('dayModal').classList.add('show');
+        }
+
+        function addDay() {
+            const day = {
+                id: Date.now(),
+                dayNumber: parseInt(document.getElementById('dayNumber').value) || 1,
+                date: document.getElementById('dayDate').value,
+                time: document.getElementById('dayTime').value,
+                location: document.getElementById('dayLocation').value,
+                description: document.getElementById('dayDescription').value,
+                createdBy: data.currentUser,
+                createdAt: new Date().toLocaleString('ko-KR')
+            };
+            data.itinerary.push(day);
+            data.itinerary.sort((a, b) => {
+                if (a.dayNumber !== b.dayNumber) return a.dayNumber - b.dayNumber;
+                return new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time);
+            });
+            closeModal('dayModal');
+            clearDayForm();
+            renderItinerary();
+        }
+
+        function openSimModal() {
+            document.getElementById('simType').value = data.sim.type;
+            document.getElementById('simProvider').value = data.sim.provider;
+            document.getElementById('simPrice').value = data.sim.price;
+            document.getElementById('simData').value = data.sim.data;
+            document.getElementById('simLocation').value = data.sim.location;
+            document.getElementById('simNotes').value = data.sim.notes;
+            document.getElementById('simModal').classList.add('show');
+        }
+
+        function saveSim() {
+            data.sim = {
+                type: document.getElementById('simType').value,
+                provider: document.getElementById('simProvider').value,
+                price: document.getElementById('simPrice').value,
+                data: document.getElementById('simData').value,
+                location: document.getElementById('simLocation').value,
+                notes: document.getElementById('simNotes').value
+            };
+            closeModal('simModal');
+            renderSim();
+        }
+
+        function openNotesModal() {
+            document.getElementById('notesModal').classList.add('show');
+        }
+
+        function addNote() {
+            const note = {
+                id: Date.now(),
+                title: document.getElementById('noteTitle').value,
+                content: document.getElementById('noteContent').value
+            };
+            data.notes.push(note);
+            closeModal('notesModal');
+            document.getElementById('noteTitle').value = '';
+            document.getElementById('noteContent').value = '';
+            renderTripInfo();
+        }
+
+        function openPersonalNoteModal() {
+            document.getElementById('personalNoteModal').classList.add('show');
+        }
+
+        function openChecklistModal() {
+            document.getElementById('checklistModal').classList.add('show');
+        }
+
+        function addPersonalNote() {
+            const title = document.getElementById('personalNoteTitle').value;
+            const content = document.getElementById('personalNoteContent').value;
+            
+            if (!data.personalNotes[data.currentUser]) {
+                data.personalNotes[data.currentUser] = [];
+            }
+            
+            data.personalNotes[data.currentUser].push({
+                id: Date.now(),
+                title: title,
+                content: content,
+                createdAt: new Date().toLocaleString('ko-KR')
+            });
+            
+            closeModal('personalNoteModal');
+            document.getElementById('personalNoteTitle').value = '';
+            document.getElementById('personalNoteContent').value = '';
+            renderPersonalNotes();
+        }
+
+        function addChecklist() {
+            const task = document.getElementById('checklistTask').value;
+            const days = document.getElementById('checklistDays').value;
+            
+            if (task) {
+                data.checklist.push({
+                    id: Date.now(),
+                    task: task,
+                    days: days,
+                    completed: false
+                });
+                
+                closeModal('checklistModal');
+                document.getElementById('checklistTask').value = '';
+                document.getElementById('checklistDays').value = '';
+                renderTripInfo();
+            }
+        }
+
+        function toggleChecklistItem(id) {
+            const item = data.checklist.find(c => c.id === id);
+            if (item) item.completed = !item.completed;
+            renderTripInfo();
+        }
+
+        function deleteChecklistItem(id) {
+            data.checklist = data.checklist.filter(c => c.id !== id);
+            renderTripInfo();
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        // ==================== Clear Forms ====================
+        function clearFlightForm() {
+            document.getElementById('flightAirline').value = '';
+            document.getElementById('flightNumber').value = '';
+            document.getElementById('flightDeparture').value = '';
+            document.getElementById('flightArrival').value = '';
+            document.getElementById('flightStatus').value = '예약 완료';
+        }
+
+        function clearHotelForm() {
+            document.getElementById('hotelName').value = '';
+            document.getElementById('hotelAddress').value = '';
+            document.getElementById('hotelCheckIn').value = '';
+            document.getElementById('hotelCheckOut').value = '';
+            document.getElementById('hotelPrice').value = '';
+        }
+
+        function clearTransportForm() {
+            document.getElementById('transportType').value = '✈️ 비행기';
+            document.getElementById('transportRoute').value = '';
+            document.getElementById('transportDeparture').value = '';
+            document.getElementById('transportArrival').value = '';
+            document.getElementById('transportPrice').value = '';
+        }
+
+        function clearTicketForm() {
+            document.getElementById('ticketName').value = '';
+            document.getElementById('ticketDate').value = '';
+            document.getElementById('ticketTime').value = '';
+            document.getElementById('ticketPrice').value = '';
+        }
+
+        function clearPackingForm() {
+            document.getElementById('packingCategory').value = '필수 문서';
+            document.getElementById('packingItem').value = '';
+            document.getElementById('packingUser').value = '';
+        }
+
+        function clearDayForm() {
+            document.getElementById('dayNumber').value = '';
+            document.getElementById('dayDate').value = '';
+            document.getElementById('dayTime').value = '';
+            document.getElementById('dayLocation').value = '';
+            document.getElementById('dayDescription').value = '';
+        }
+
+        // ==================== Render Functions ====================
+        function renderTripInfo() {
+            document.getElementById('tripDestination').textContent = data.tripInfo.destination || '-';
+            document.getElementById('tripStartDate').textContent = data.tripInfo.startDate || '-';
+            document.getElementById('tripEndDate').textContent = data.tripInfo.endDate || '-';
+            document.getElementById('tripBudget').textContent = data.tripInfo.budget ? `₩${parseInt(data.tripInfo.budget).toLocaleString()}` : '-';
+            
+            // Travelers
+            const travelersDisplay = document.getElementById('travelersDisplay');
+            if (data.tripInfo.travelers.length === 0) {
+                travelersDisplay.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🚶</div><div class="empty-state-title">아직 여행자가 없습니다</div></div>';
+            } else {
+                travelersDisplay.innerHTML = data.tripInfo.travelers.map(traveler => `
+                    <div class="list-item">
+                        <div class="list-content">
+                            <div class="list-title">👤 ${traveler}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderFlights() {
+            const display = document.getElementById('flightsDisplay');
+            if (data.bookings.flights.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✈️</div><div class="empty-state-title">아직 항공권이 없습니다</div></div>';
+            } else {
+                display.innerHTML = data.bookings.flights.map(flight => `
+                    <div class="list-item">
+                        <div class="list-content">
+                            <div class="list-title">${flight.airline} ${flight.number}</div>
+                            <div class="list-desc">
+                                출발: ${new Date(flight.departure).toLocaleString('ko-KR')} → 도착: ${new Date(flight.arrival).toLocaleString('ko-KR')}
+                            </div>
+                            <span class="badge badge-${flight.status === '예약 완료' ? 'success' : flight.status === '확인 필요' ? 'warning' : 'danger'}">${flight.status}</span>
+                        </div>
+                        <div class="list-actions">
+                            <button class="btn btn-danger btn-small" onclick="deleteFlight(${flight.id})">삭제</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderHotels() {
+            const display = document.getElementById('hotelsDisplay');
+            if (data.bookings.hotels.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🏨</div><div class="empty-state-title">아직 숙박 예약이 없습니다</div></div>';
+            } else {
+                display.innerHTML = data.bookings.hotels.map(hotel => `
+                    <div class="list-item">
+                        <div class="list-content">
+                            <div class="list-title">${hotel.name}</div>
+                            <div class="list-desc">${hotel.address}</div>
+                            <div class="list-desc">체크인: ${hotel.checkIn} → 체크아웃: ${hotel.checkOut}</div>
+                            <div class="list-desc">💰 ₩${parseInt(hotel.price).toLocaleString()}</div>
+                            <span class="badge badge-${hotel.status === '예약 완료' ? 'success' : hotel.status === '확인 필요' ? 'warning' : 'danger'}">${hotel.status}</span>
+                        </div>
+                        <div class="list-actions">
+                            <button class="btn btn-danger btn-small" onclick="deleteHotel(${hotel.id})">삭제</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderTransports() {
+            const display = document.getElementById('transportsDisplay');
+            if (data.bookings.transports.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🚄</div><div class="empty-state-title">아직 교통 예약이 없습니다</div></div>';
+            } else {
+                display.innerHTML = data.bookings.transports.map(transport => `
+                    <div class="list-item">
+                        <div class="list-content">
+                            <div class="list-title">${transport.type} - ${transport.route}</div>
+                            <div class="list-desc">출발: ${new Date(transport.departure).toLocaleString('ko-KR')} → 도착: ${new Date(transport.arrival).toLocaleString('ko-KR')}</div>
+                            <div class="list-desc">💰 ₩${parseInt(transport.price).toLocaleString()}</div>
+                        </div>
+                        <div class="list-actions">
+                            <button class="btn btn-danger btn-small" onclick="deleteTransport(${transport.id})">삭제</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderTickets() {
+            const display = document.getElementById('ticketsDisplay');
+            if (data.bookings.tickets.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🎫</div><div class="empty-state-title">아직 입장권이 없습니다</div></div>';
+            } else {
+                display.innerHTML = data.bookings.tickets.map(ticket => `
+                    <div class="list-item">
+                        <div class="list-content">
+                            <div class="list-title">${ticket.name}</div>
+                            <div class="list-desc">방문: ${ticket.date} ${ticket.time}</div>
+                            <div class="list-desc">💰 ₩${parseInt(ticket.price).toLocaleString()}</div>
+                            <span class="badge badge-${ticket.status === '예약 완료' ? 'success' : ticket.status === '확인 필요' ? 'warning' : 'danger'}">${ticket.status}</span>
+                        </div>
+                        <div class="list-actions">
+                            <button class="btn btn-danger btn-small" onclick="deleteTicket(${ticket.id})">삭제</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderPacking() {
+            const display = document.getElementById('packingDisplay');
+            const progress = document.getElementById('packingProgress');
+            
+            const completed = data.packing.filter(p => p.completed).length;
+            const total = data.packing.length;
+            const progressPercent = total === 0 ? 0 : Math.round((completed / total) * 100);
+            
+            progress.textContent = `진행률: ${progressPercent}% (${completed}/${total})`;
+            
+            if (total === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🧳</div><div class="empty-state-title">아직 준비물이 없습니다</div></div>';
+            } else {
+                const grouped = {};
+                data.packing.forEach(p => {
+                    if (!grouped[p.category]) grouped[p.category] = [];
+                    grouped[p.category].push(p);
+                });
+                
+                let html = '';
+                Object.entries(grouped).forEach(([category, items]) => {
+                    html += `<div style="margin-bottom: 20px;"><h3 style="color: var(--primary); margin-bottom: 10px;">📂 ${category}</h3>`;
+                    html += items.map(item => `
+                        <div class="list-item ${item.completed ? 'completed' : ''}">
+                            <input type="checkbox" class="list-checkbox" ${item.completed ? 'checked' : ''} onchange="togglePacking(${item.id})">
+                            <div class="list-content">
+                                <div class="list-title">${item.item}</div>
+                                <div class="list-desc">담당: ${item.user}</div>
+                                <div class="list-desc" style="font-size: 0.85em; color: var(--text-light); margin-top: 4px;">👤 ${item.createdBy} | 📝 ${item.createdAt}</div>
+                            </div>
+                            <div class="list-actions">
+                                <button class="btn btn-danger btn-small" onclick="deletePacking(${item.id})">삭제</button>
+                            </div>
+                        </div>
+                    `).join('');
+                    html += '</div>';
+                });
+                display.innerHTML = html;
+            }
+        }
+
+        function togglePacking(id) {
+            const packing = data.packing.find(p => p.id === id);
+            if (packing) packing.completed = !packing.completed;
+            renderPacking();
+        }
+
+        function renderItinerary() {
+            renderRoadmap();
+            
+            const display = document.getElementById('itineraryDisplay');
+            if (data.itinerary.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🗓️</div><div class="empty-state-title">아직 여정이 없습니다</div></div>';
+            } else {
+                let html = '';
+                
+                data.itinerary.forEach((item) => {
+                    html += `
+                        <div class="card" style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="display: inline-block; background: var(--primary); color: white; padding: 8px 16px; border-radius: 20px; font-weight: 700; margin-bottom: 10px;">Day ${item.dayNumber}</div>
+                                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 5px;">📅 ${item.date}</div>
+                                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 10px;">⏰ ${item.time}</div>
+                                    <div style="font-weight: 600; font-size: 1.1em; margin-bottom: 8px;">📍 ${item.location}</div>
+                                    <div style="color: var(--text-light); font-size: 0.95em; margin-bottom: 12px;">${item.description}</div>
+                                    <div style="padding-top: 8px; border-top: 1px solid var(--border); font-size: 0.85em; color: var(--text-light);">
+                                        👤 ${item.createdBy} | 📝 ${item.createdAt}
+                                    </div>
+                                </div>
+                                <button class="btn btn-danger btn-small" onclick="deleteDay(${item.id})">삭제</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                display.innerHTML = html;
+            }
+        }
+
+        function renderRoadmap() {
+            const display = document.getElementById('roadmapDisplay');
+            
+            if (data.itinerary.length === 0) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🗺️</div><div class="empty-state-title">여정을 추가하면 로드맵이 나타납니다</div></div>';
+                return;
+            }
+            
+            // 고유한 Day 번호들 추출
+            const uniqueDays = [...new Set(data.itinerary.map(item => item.dayNumber))].sort((a, b) => a - b);
+            
+            let html = `<div style="display: flex; gap: 0; align-items: stretch; overflow-x: auto; padding-bottom: 10px;">`;
+            
+            uniqueDays.forEach((dayNum, index) => {
+                const dayItems = data.itinerary.filter(item => item.dayNumber === dayNum);
+                const locations = dayItems.map(item => item.location).join(', ');
+                
+                html += `
+                    <div style="flex: 0 0 auto; text-align: center; position: relative;">
+                        <div style="background: var(--primary); color: white; padding: 16px 24px; border-radius: 8px; margin-bottom: 10px; min-width: 120px; font-weight: 700;">
+                            Day ${dayNum}
+                        </div>
+                        <div style="font-size: 0.85em; color: var(--text-light); padding: 0 12px; max-width: 120px; word-break: break-word;">
+                            ${locations.length > 20 ? locations.substring(0, 20) + '...' : locations}
+                        </div>
+                        <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-light);">${dayItems[0].date}</div>
+                `;
+                
+                // 연결선 추가
+                if (index < uniqueDays.length - 1) {
+                    html += `<div style="position: absolute; top: 50%; right: -24px; width: 20px; height: 2px; background: var(--primary); z-index: 1;"></div>`;
+                    html += `<div style="position: absolute; top: 50%; right: -28px; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; z-index: 2; transform: translateY(-50%);"></div>`;
+                }
+                
+                html += `</div>`;
+            });
+            
+            html += `</div>`;
+            display.innerHTML = html;
+        }
+
+        function renderSim() {
+            const display = document.getElementById('simDisplay');
+            if (!data.sim.type) {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📱</div><div class="empty-state-title">유심 정보를 입력해주세요</div></div>';
+            } else {
+                display.innerHTML = `
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <div class="info-label">타입</div>
+                            <div class="info-value">${data.sim.type}</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">업체</div>
+                            <div class="info-value">${data.sim.provider}</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">가격</div>
+                            <div class="info-value">₩${parseInt(data.sim.price).toLocaleString()}</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">데이터</div>
+                            <div class="info-value">${data.sim.data}</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div><strong>구입 장소:</strong> ${data.sim.location}</div>
+                        <div style="margin-top: 10px;"><strong>참고:</strong> ${data.sim.notes}</div>
+                    </div>
+                `;
+            }
+        }
+
+        function renderPersonalNotes() {
+            const display = document.getElementById('personalNotesDisplay');
+            
+            if (data.currentUser === 'all') {
+                display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">👥</div><div class="empty-state-title">개인별 메모를 보려면 사용자를 선택하세요</div></div>';
+            } else {
+                const notes = data.personalNotes[data.currentUser] || [];
+                if (notes.length === 0) {
+                    display.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-title">아직 메모가 없습니다</div></div>';
+                } else {
+                    display.innerHTML = notes.map(note => `
+                        <div class="list-item">
+                            <div class="list-content">
+                                <div class="list-title">${note.title}</div>
+                                <div class="list-desc">${note.content}</div>
+                                <div class="list-desc" style="font-size: 0.85em; color: var(--text-light); margin-top: 4px;">📝 ${note.createdAt}</div>
+                            </div>
+                            <div class="list-actions">
+                                <button class="btn btn-danger btn-small" onclick="deletePersonalNote(${note.id})">삭제</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        }
+
+        // ==================== Delete Functions ====================
+        function deleteFlight(id) {
+            data.bookings.flights = data.bookings.flights.filter(f => f.id !== id);
+            renderFlights();
+        }
+
+        function deleteHotel(id) {
+            data.bookings.hotels = data.bookings.hotels.filter(h => h.id !== id);
+            renderHotels();
+        }
+
+        function deleteTransport(id) {
+            data.bookings.transports = data.bookings.transports.filter(t => t.id !== id);
+            renderTransports();
+        }
+
+        function deleteTicket(id) {
+            data.bookings.tickets = data.bookings.tickets.filter(t => t.id !== id);
+            renderTickets();
+        }
+
+        function deletePacking(id) {
+            data.packing = data.packing.filter(p => p.id !== id);
+            renderPacking();
+        }
+
+        function deleteDay(id) {
+            data.itinerary = data.itinerary.filter(d => d.id !== id);
+            renderItinerary();
+        }
+
+        function deletePersonalNote(id) {
+            const notes = data.personalNotes[data.currentUser];
+            if (notes) {
+                data.personalNotes[data.currentUser] = notes.filter(n => n.id !== id);
+            }
+            renderPersonalNotes();
+        }
+
+        // ==================== Render All ====================
+        function renderAllContent() {
+            renderTripInfo();
+            renderFlights();
+            renderHotels();
+            renderTransports();
+            renderTickets();
+            renderPacking();
+            renderItinerary();
+            renderSim();
+            renderPersonalNotes();
+        }
+
+        // Initialize
+        renderUserPills();
+        renderAllContent();
+    </script>
+</body>
+</html>
